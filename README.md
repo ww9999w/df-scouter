@@ -14,7 +14,7 @@
 
 ## 설치 방법
 
-1. **Code → Download ZIP**으로 내려받고 압축을 풉니다.
+1. **[최신 버전 다운로드](https://github.com/ww9999w/df-scouter/releases/latest/download/df-scouter.zip)**를 눌러 내려받고 압축을 풉니다.
 2. Chrome은 `chrome://extensions`, Edge는 `edge://extensions`를 엽니다.
 3. **개발자 모드**를 켭니다.
 4. **압축 해제된 확장프로그램 로드**를 눌러 `manifest.json`이 있는 폴더를 선택합니다.
