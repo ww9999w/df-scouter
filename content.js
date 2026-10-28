@@ -196,7 +196,13 @@
     const results = await Promise.allSettled([request(target, 'score'), request(target, 'adventure')]);
     const score = results[0];
     if (score.status === 'fulfilled') {
-      try { data.equipmentScore = P.decodeScore(P.unwrap(score.value.text)); }
+      try {
+        const payload = P.unwrap(score.value.text);
+        data.equipmentScore = P.decodeScore(payload);
+        // The initial profile HTML uses equi for buffers too. The official
+        // renderer switches to buff after point-status returns t === true.
+        data.scoreType = payload.t === true ? 'buff' : 'equipment';
+      }
       catch { warnings.push('장비점수 응답을 판독하지 못했습니다.'); }
     } else warnings.push(`장비점수: ${score.reason.message}`);
     const adventure = results[1];
