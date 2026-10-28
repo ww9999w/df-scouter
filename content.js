@@ -250,9 +250,11 @@
     state.summary.hidden = !snapshot;
     if (!snapshot) return;
     const d = snapshot.data;
+    const buffScore = d.scoreType === 'buff';
     const parts = [state.summaryStyle, element('span', 'summary-job', d.job || '직업 미확인'),
       iconMetric('모험가 명성', d.fame === null ? null : fmt(d.fame), 'fame.png'),
-      iconMetric('장비점수', d.equipmentScore === null ? null : fmt(d.equipmentScore), 'equipment-score.png')];
+      iconMetric(buffScore ? '버프점수' : '장비점수', d.equipmentScore === null ? null : fmt(d.equipmentScore),
+        buffScore ? 'buff-score.png' : 'equipment-score.png')];
     if (d.blackAbyss?.length) {
       const black = element('span', 'black-count');
       black.title = `흑아 장비: ${d.blackAbyss.join(', ')}`;

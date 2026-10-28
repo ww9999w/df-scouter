@@ -27,12 +27,12 @@
     const card = doc.querySelector('#detailCardCaptureArea dd.fame');
     const field = card || doc.querySelector('dd.fame');
     if (!field) return null;
-    const span = field.querySelector(':scope > p:not(.equi) > span');
+    const span = field.querySelector(':scope > p:not(.equi):not(.buff) > span');
     let value;
     if (span) value = clean(span.textContent);
     else {
       const copy = field.cloneNode(true);
-      copy.querySelectorAll('.equi, #equipment-point, canvas').forEach(node => node.remove());
+      copy.querySelectorAll('.equi, .buff, #equipment-point, canvas').forEach(node => node.remove());
       value = clean(copy.textContent).replace(/^(?:모험가\s*명성|명성)\s*/u, '').replace(/\s*점$/u, '').trim();
     }
     return value === '-' ? 0 : number(value);
@@ -94,6 +94,8 @@
       })) : null,
       mistLevel: number(doc.querySelector('#mistAssimilation_level')?.textContent),
       equipmentScore: null,
+      scoreType: (doc.querySelector('#detailCardCaptureArea dd.fame #equipment-point') ||
+        doc.querySelector('dd.fame #equipment-point'))?.classList.contains('buff') ? 'buff' : 'equipment',
       adventure: adventure(doc),
     };
   }
