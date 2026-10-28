@@ -1,0 +1,32 @@
+/* The site's broad li/span selectors must not control extension hosts. */
+.df-scouter-control, .df-scouter-summary {
+  display: inline-flex !important;
+  align-items: center !important;
+  float: none;
+  width: auto !important;
+  height: 28px !important;
+  margin: 0 0 0 10px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  vertical-align: middle;
+  line-height: 28px !important;
+  white-space: nowrap;
+}
+.df-scouter-control.df-scouter-float, .df-scouter-summary.df-scouter-float { float: left; }
+.df-scouter-summary[hidden] { display: none !important; }
+.df-scouter-panel {
+  display: block !important;
+  clear: both !important;
+  float: none !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 6px 0 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-align: left !important;
+  white-space: normal !important;
+}
+.df-scouter-panel[hidden] { display: none !important; }

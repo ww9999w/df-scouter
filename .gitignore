@@ -1,0 +1,14 @@
+# Local review documents and comment screenshots are not public source files.
+/검증결과.md
+/설치와 사용법.md
+/미리보기.png
+/캡쳐예시.png
+
+.DS_Store
+Thumbs.db
+desktop.ini
+*.zip
+*.log
+node_modules/
+.env
+.env.*
