@@ -1,5 +1,7 @@
 # DF Scouter
 
+<img src="icons/scouter-source.png" alt="스카우터를 착용한 DF Scouter 캐릭터" width="256">
+
 던전앤파이터 비공식 팬 프로젝트입니다.
 
 ## 소개
